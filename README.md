@@ -1,2 +1,2 @@
 # ds-personal
-Personal Data Science Mini Projects
+Personal Data Science Mini Projects mostly Energy Industry Related
