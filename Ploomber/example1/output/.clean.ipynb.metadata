@@ -1,0 +1,1 @@
+{"timestamp": 1688656004.471229, "stored_source_code": "upstream = list('raw')\nproduct = NULL\ndf = read.csv(upstream$raw$data)\nwrite.csv(df, product$data)", "params": {}}

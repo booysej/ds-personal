@@ -1,1 +1,0 @@
-{"timestamp": 1688214699.357812, "stored_source_code": "upstream = NULL\nproduct = NULL\ndata(iris)\ncolnames(iris) = list('sepal_length', 'sepal_width','petal_length', 'petal_width', 'class')\ndir.create('output')\nwrite.csv(iris, product$data)", "params": {}}
