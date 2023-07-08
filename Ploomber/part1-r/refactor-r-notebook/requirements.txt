@@ -15,3 +15,12 @@ matplotlib
 ploomber>=0.14.7
 scikit-learn
 seaborn
+# Auto-generated file, may need manual editing
+ploomber>=0.14.7
+scikit-learn
+seaborn
+# Auto-generated file, may need manual editing
+matplotlib
+ploomber>=0.14.7
+scikit-learn
+seaborn

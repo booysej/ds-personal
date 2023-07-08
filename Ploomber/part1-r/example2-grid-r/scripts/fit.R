@@ -2,7 +2,6 @@
 library(readr)
 library(caret)
 library(randomForest)
-library(adabag)
 
 # %% tags=["parameters"]
 upstream <- list('features')
@@ -10,10 +9,10 @@ product <- NULL
 model_type <- 'random-forest'
 n_estimators <- NULL
 criterion <- NULL
-learning_rate <- NULL
 
 # %%
 df <- read_csv(paste0(upstream['features']))
+colnames(df) <- c("petral_area", "petal_length", "petal_width", "sepal_area", "sepal_length", "sepal_width", "target")
 X <- df[, !names(df) %in% 'target']
 y <- df$target
 
@@ -30,10 +29,7 @@ test_set <- df[-trainIndex, ]
 if (model_type == 'random-forest') {
     model <- randomForest(target ~ ., data = train_set,
                         ntree = n_estimators)
-} else if (model_type == 'ada-boost') {
-    model <- boosting(target ~ ., data = train_set,
-                    boos = TRUE, mfinal = n_estimators)
-} else {
+}  else {
     stop(paste0("Unsupported model type: ", model_type))
 }
 
@@ -41,7 +37,8 @@ if (model_type == 'random-forest') {
 y_pred <- predict(model, newdata = test_set)
 
 # %%
-print(confusionMatrix(data = as.factor(y_pred$class), reference = as.factor(test_set$target)))
+test_set$y_pred <- round(y_pred)
+print(mean(abs(test_set$target - test_set$y_pred)))
 
 # %%
-save(model, file = paste0(product['model'], ".rda"))
+save(model, file = paste0(product['model']))

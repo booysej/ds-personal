@@ -29,10 +29,10 @@ X_train, X_test, y_train, y_test = train_test_split(X,
 # %%
 if model_type == 'random-forest':
     clf = RandomForestClassifier(n_estimators=n_estimators,
-                                 criterion=criterion)
+                                criterion=criterion)
 elif model_type == 'ada-boost':
     clf = AdaBoostClassifier(n_estimators=n_estimators,
-                             learning_rate=learning_rate)
+                            learning_rate=learning_rate)
 else:
     raise ValueError(f'Unsupported model type: {model_type!r}')
 
