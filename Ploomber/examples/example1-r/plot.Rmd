@@ -9,5 +9,6 @@ head(df)
 ```
 
 ```{r}
+par(bg = "#FFFFFF")
 hist(df$sepal_length)
 ```
