@@ -1,3 +1,0 @@
-pandas
-ploomber
-scikit-learn

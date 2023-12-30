@@ -1,8 +1,0 @@
-name: spec-api-r # name of the environment
-
-dependencies: # install these packages
-  - python=3.10 # install Python
-  - r-base=4.0.3 # install R
-  - r-irkernel # install R kernel for Jupyter
-  - pip:
-    - ploomber # install ploomber
